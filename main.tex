@@ -1,0 +1,68 @@
+\documentclass{njustthesis}
+\njustsetup{%
+  author = 吴振宇,
+  id = 916101630117,
+  discipline = 电子信息工程,
+  title = 电子测量技术,
+  subtitle = 电子测量系统仿真,
+  title* = {electronic measurement technology},
+  subtitle* = {Electronic measurement system simulation},
+  cover-title = 课程设计说明书,
+  abstract-prefix = 课设论文,
+  header-title = 本科课程设计说明书,
+  supervisor = 张文青,
+  judge = 张文青,
+}
+\usepackage[refpage]{nomencl}
+\makenomenclature%
+\renewcommand{\nomname}{术语}
+\renewcommand{\pagedeclaration}{，第1次出现在页~}
+\usepackage{minted}
+\setminted[cpp]{%
+  breakanywhere,
+  breakanywheresymbolpre = {},
+  breaksymbolleft = {},
+  breaksymbolindentleftnchars = 0,
+}
+\usepackage{boxie}
+\usepackage{siunitx}
+\sisetup{mode = text}
+\usepackage{cases}
+\usepackage{csvsimple}
+\usepackage{booktabs}
+\usepackage{subfiles}
+\usepackage{subcaption}
+\usepackage{fvextra}
+\fvset{%
+  highlightcolor = {yellow!20, white},
+}
+\newtheorem{definition}{定义}
+\newtheorem{theorem}{定理}
+\begin{document}
+
+\maketitle
+\copyrightpage%
+\subfile{sub/abstract}
+
+{%
+  \frontmatter
+  \tableofcontents
+  \listoffigures
+  \listoftables
+  \printnomenclature%
+
+  \mainmatter%
+  \subfile{sub/introduction}
+  \subfile{sub/realize}
+  \subfile{sub/display}
+
+  \backmatter%
+  \bibliography{bib/main}
+  \subfile{sub/acknowledgement}
+}
+
+\appendix
+\subfile{sub/code}
+
+\end{document}
+
